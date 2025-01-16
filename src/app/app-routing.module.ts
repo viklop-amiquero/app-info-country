@@ -9,14 +9,14 @@ const routes: Routes = [
     //     path: '',
     //     component: HomePageComponent,
     // },
-    {
-        path: 'about',
-        component: AboutPageComponent,
-    },
-    {
-        path: 'contact',
-        component: ContactPageComponent,
-    },
+    // {
+    //     path: 'about',
+    //     component: AboutPageComponent,
+    // },
+    // {
+    //     path: 'contact',
+    //     component: ContactPageComponent,
+    // },
     {
         path: 'countries',
         loadChildren: () =>
