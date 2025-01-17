@@ -1,1 +1,14 @@
-<p>by-region-page works!</p>
+<h2>Continente</h2>
+
+<shared-search-box (onValue)="searchByRegion($event)"></shared-search-box>
+
+<div
+    *ngIf="countries.length === 0; else table"
+    class="mt-2 alert alert-warning"
+>
+    No hay información que mostrar
+</div>
+
+<ng-template #table>
+    <country-table [countries]="countries"></country-table>
+</ng-template>
