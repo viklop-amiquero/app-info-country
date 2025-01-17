@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-by-capital-pages',
-  templateUrl: './by-capital-pages.component.html',
-  styleUrl: './by-capital-pages.component.css'
+    selector: 'app-by-capital-pages',
+    templateUrl: './by-capital-pages.component.html',
+    styleUrl: './by-capital-pages.component.css',
 })
 export class ByCapitalPagesComponent {
-
+    searchByCapital(data: string) {
+        console.log('desde componenete padre', data)
+    }
 }
