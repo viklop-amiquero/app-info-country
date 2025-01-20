@@ -1,6 +1,18 @@
 <h2>Continente</h2>
 
-<shared-search-box (onValue)="searchByRegion($event)"></shared-search-box>
+<!-- <shared-search-box (onValue)="searchByRegion($event)"></shared-search-box> -->
+<div class="d-flex justify-content-center">
+    <div class="">
+        <button
+            *ngFor="let region of regions"
+            class="btn mr-2"
+            [ngClass]="{ 'btn-outline-primary': regionSelected === region }"
+            (click)="searchByRegion(region)"
+        >
+            {{ region | uppercase }}
+        </button>
+    </div>
+</div>
 
 <div
     *ngIf="countries.length === 0; else table"
@@ -8,6 +20,8 @@
 >
     No hay información que mostrar
 </div>
+
+<shared-loading-spinner *ngIf="spinner"></shared-loading-spinner>
 
 <ng-template #table>
     <country-table [countries]="countries"></country-table>

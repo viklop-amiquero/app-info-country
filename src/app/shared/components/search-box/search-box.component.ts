@@ -2,6 +2,7 @@ import {
     Component,
     ElementRef,
     EventEmitter,
+    Input,
     Output,
     ViewChild,
 } from '@angular/core'
@@ -13,6 +14,9 @@ import {
 })
 export class SearchBoxComponent {
     // public placeholder: string = ''
+
+    @Input()
+    public initialValue: string = ' '
 
     @ViewChild('tagTxtInput')
     public txtInput!: ElementRef<HTMLInputElement>

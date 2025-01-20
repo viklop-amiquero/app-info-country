@@ -1,6 +1,9 @@
 <h2>Capital</h2>
 
-<shared-search-box (onValue)="searchByCapital($event)"></shared-search-box>
+<shared-search-box
+    (onValue)="searchByCapital($event)"
+    [initialValue]="initialValue"
+></shared-search-box>
 
 <div
     *ngIf="countries.length === 0; else table"
@@ -8,6 +11,8 @@
 >
     No hay información que mostrar
 </div>
+
+<shared-loading-spinner *ngIf="spinner"></shared-loading-spinner>
 
 <ng-template #table>
     <country-table [countries]="countries"></country-table>
